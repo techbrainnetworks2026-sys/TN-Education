@@ -1,17 +1,17 @@
 import React from 'react';
-import { 
-  Box, 
-  Container, 
-  Typography, 
-  Grid, 
-  useTheme, 
-  alpha 
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  useTheme,
+  alpha
 } from '@mui/material';
-import { 
-  TrackChanges as TargetIcon, 
-  Lightbulb as LightbulbIcon, 
-  Favorite as HeartIcon, 
-  Bolt as ZapIcon 
+import {
+  TrackChanges as TargetIcon,
+  Lightbulb as LightbulbIcon,
+  Favorite as HeartIcon,
+  Bolt as ZapIcon
 } from '@mui/icons-material';
 
 const About = () => {
@@ -45,14 +45,14 @@ const About = () => {
   ];
 
   return (
-    <Box 
-      id="about" 
-      component="section" 
-      sx={{ 
-        py: { xs: 10, md: 15 }, 
-        bgcolor: 'white', 
-        position: 'relative', 
-        overflow: 'hidden' 
+    <Box
+      id="about"
+      component="section"
+      sx={{
+        py: { xs: 10, md: 15 },
+        bgcolor: 'white',
+        position: 'relative',
+        overflow: 'hidden'
       }}
     >
       <Container maxWidth="lg">
@@ -66,7 +66,7 @@ const About = () => {
               Leading the <Box component="span" sx={{ color: 'primary.main', fontStyle: 'italic' }}>Digital Revolution</Box> in Education Technology
             </Typography>
             <Typography variant="body1" sx={{ fontSize: '1.1rem', color: 'text.secondary', mb: 6, lineHeight: 1.7 }}>
-              Techbrain Networks is a leading Software Product Development company specializing in AI, IoT, 
+              Techbrain Networks is a leading Software Product Development company specializing in AI, IoT,
               Big Data, Blockchain, Cloud Computing, Quantum Computing, and Digital Marketing.
             </Typography>
 
@@ -74,16 +74,16 @@ const About = () => {
               {features.map((item, index) => (
                 <Grid size={{ xs: 12, sm: 6 }} key={index}>
                   <Box sx={{ group: 'true' }}>
-                    <Box 
-                      sx={{ 
-                        width: 48, 
-                        height: 48, 
-                        bgcolor: alpha(item.color, 0.1), 
-                        borderRadius: 3, 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        justifyContent: 'center', 
-                        color: item.color, 
+                    <Box
+                      sx={{
+                        width: 48,
+                        height: 48,
+                        bgcolor: alpha(item.color, 0.1),
+                        borderRadius: 3,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: item.color,
                         mb: 2,
                         transition: 'all 0.3s ease',
                         '.group:hover &': {
@@ -110,33 +110,33 @@ const About = () => {
           {/* Right: Visual/Founder */}
           <Grid size={{ xs: 12, md: 6 }}>
             <Box sx={{ position: 'relative' }}>
-              <Box 
-                sx={{ 
-                  position: 'absolute', 
-                  inset: -16, 
-                  bgcolor: alpha(theme.palette.primary.main, 0.05), 
-                  borderRadius: 8, 
-                  transform: 'rotate(-3deg)', 
-                  zIndex: 0 
-                }} 
+              <Box
+                sx={{
+                  position: 'absolute',
+                  inset: -16,
+                  bgcolor: alpha(theme.palette.primary.main, 0.05),
+                  borderRadius: 8,
+                  transform: 'rotate(-3deg)',
+                  zIndex: 0
+                }}
               />
-              <Box 
-                sx={{ 
-                  position: 'relative', 
-                  zIndex: 1, 
-                  bgcolor: 'white', 
-                  p: 4, 
-                  borderRadius: 8, 
-                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.1)', 
-                  border: '1px solid', 
-                  borderColor: 'grey.100' 
+              <Box
+                sx={{
+                  position: 'relative',
+                  zIndex: 1,
+                  bgcolor: 'white',
+                  p: 4,
+                  borderRadius: 8,
+                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.1)',
+                  border: '1px solid',
+                  borderColor: 'grey.100'
                 }}
               >
-                <Box 
-                  sx={{ 
-                    width: '100%', 
-                    aspectRatio: '1/1', 
-                    borderRadius: 4, 
+                <Box
+                  sx={{
+                    width: '100%',
+                    aspectRatio: '1/1',
+                    borderRadius: 4,
                     backgroundImage: `url('https://images.unsplash.com/photo-1507005316197-7d683234149e?auto=format&fit=crop&q=80&w=800')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
@@ -155,34 +155,34 @@ const About = () => {
                   </Box>
                   <Box sx={{ display: 'flex', gap: 1 }}>
                     {[0, 1, 2].map((i) => (
-                      <Box 
-                        key={i} 
-                        sx={{ 
-                          width: 8, 
-                          height: 8, 
-                          borderRadius: '50%', 
+                      <Box
+                        key={i}
+                        sx={{
+                          width: 8,
+                          height: 8,
+                          borderRadius: '50%',
                           bgcolor: i === 0 ? 'primary.main' : i === 1 ? 'secondary.main' : 'accent.main',
                           animation: 'pulse 1.5s infinite',
                           animationDelay: `${i * 0.2}s`
-                        }} 
+                        }}
                       />
                     ))}
                   </Box>
                 </Box>
-                <Box 
-                  component="blockquote" 
-                  sx={{ 
-                    fontStyle: 'italic', 
-                    color: 'text.secondary', 
-                    borderLeft: '4px solid', 
-                    borderColor: 'primary.main', 
-                    pl: 2, 
+                <Box
+                  component="blockquote"
+                  sx={{
+                    fontStyle: 'italic',
+                    color: 'text.secondary',
+                    borderLeft: '4px solid',
+                    borderColor: 'primary.main',
+                    pl: 2,
                     py: 1,
                     m: 0
                   }}
                 >
                   <Typography variant="body1">
-                    "At Techbrain, we don't just build software; we architect the digital scaffolding 
+                    "At Techbrain, we don't just build software; we architect the digital scaffolding
                     for the next generation of academic excellence."
                   </Typography>
                 </Box>
@@ -191,7 +191,7 @@ const About = () => {
           </Grid>
         </Grid>
       </Container>
-      
+
       <style>
         {`
           @keyframes pulse {
