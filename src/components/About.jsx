@@ -55,7 +55,7 @@ const About = () => {
         overflow: 'hidden'
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth={false}>
         <Grid container spacing={8} alignItems="center">
           {/* Left: Content */}
           <Grid size={{ xs: 12, md: 6 }}>

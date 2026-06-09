@@ -14,6 +14,7 @@ import {
 } from '@mui/material';
 import { OpenInNew as ExternalLink, ArrowForward as ArrowRight } from '@mui/icons-material';
 import { PRODUCTS } from '../constants';
+import { Link } from 'react-router-dom';
 
 const ProductSection = () => {
   const theme = useTheme();
@@ -28,7 +29,7 @@ const ProductSection = () => {
         position: 'relative' 
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth={false}>
         <Box sx={{ textAlign: 'center', mb: 8 }}>
           <Box 
             sx={{ 
@@ -168,6 +169,8 @@ const ProductSection = () => {
                   
                   <Box sx={{ mt: 'auto', pt: 2, borderTop: '1px solid', borderColor: 'grey.50', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <Button 
+                      component={Link}
+                      to={`/product/${product.id}`}
                       size="small"
                       color="primary"
                       endIcon={<ArrowRight sx={{ fontSize: 16 }} />}
@@ -181,6 +184,8 @@ const ProductSection = () => {
                       Learn More
                     </Button>
                     <IconButton 
+                      component={Link}
+                      to={`/product/${product.id}`}
                       size="small" 
                       sx={{ 
                         bgcolor: alpha(theme.palette.primary.main, 0.05), 

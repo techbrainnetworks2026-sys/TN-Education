@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import { 
   Box, 
   Container, 
@@ -24,6 +25,7 @@ import { NAV_LINKS } from '../constants';
 
 const Footer = () => {
   const theme = useTheme();
+  const isHomePage = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
 
   const socialLinks = [
     { icon: <FacebookIcon sx={{ fontSize: 18 }} />, href: '#' },
@@ -52,14 +54,14 @@ const Footer = () => {
         pb: 5 
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth={false}>
         <Grid container spacing={8} sx={{ mb: 8 }}>
           {/* Brand Column */}
           <Grid size={{ xs: 12, md: 6, lg: 3 }}>
             <Stack spacing={3}>
               <Box 
                 component="a" 
-                href="#home" 
+                href={isHomePage ? "#home" : "/"} 
                 sx={{ 
                   display: 'flex', 
                   alignItems: 'center', 
@@ -149,7 +151,7 @@ const Footer = () => {
               {quickLinks.map((link) => (
                 <Link 
                   key={link.name}
-                  href={link.href}
+                  href={isHomePage ? link.href : `/${link.href}`}
                   sx={{ 
                     color: 'rgba(255,255,255,0.7)', 
                     textDecoration: 'none', 
@@ -193,7 +195,7 @@ const Footer = () => {
               {solutions.map((item) => (
                 <Link 
                   key={item.name}
-                  href={item.href}
+                  href={isHomePage ? item.href : `/${item.href}`}
                   sx={{ 
                     color: 'rgba(255,255,255,0.7)', 
                     textDecoration: 'none', 
@@ -268,20 +270,29 @@ const Footer = () => {
             © 2026 Techbrain Networks. All Rights Reserved.
           </Typography>
           <Stack direction="row" spacing={4}>
-            {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((text) => (
-              <Link 
-                key={text} 
-                href="#" 
-                sx={{ 
-                  color: 'rgba(255,255,255,0.5)', 
-                  textDecoration: 'none', 
-                  fontSize: '0.75rem',
-                  transition: 'color 0.2s',
-                  '&:hover': { color: 'white' } 
-                }}
+            {[
+              { label: 'Privacy Policy', to: '/privacy-policy' },
+              { label: 'Terms of Service', to: '/terms-of-service' },
+              { label: 'Cookie Policy', to: '/cookie-policy' }
+            ].map((item) => (
+              <RouterLink
+                key={item.label}
+                to={item.to}
+                style={{ textDecoration: 'none' }}
               >
-                {text}
-              </Link>
+                <Typography
+                  variant="caption"
+                  sx={{
+                    color: 'rgba(255,255,255,0.5)',
+                    fontSize: '0.75rem',
+                    transition: 'color 0.2s',
+                    cursor: 'pointer',
+                    '&:hover': { color: 'white' }
+                  }}
+                >
+                  {item.label}
+                </Typography>
+              </RouterLink>
             ))}
           </Stack>
         </Box>

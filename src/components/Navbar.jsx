@@ -25,6 +25,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const theme = useTheme();
+  const isHomePage = window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   useEffect(() => {
@@ -54,12 +55,12 @@ const Navbar = () => {
           color: scrolled ? 'text.primary' : 'white',
         }}
       >
-        <Container maxWidth="lg">
+        <Container maxWidth={false}>
           <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
             {/* Logo */}
             <Box 
               component="a" 
-              href="#home" 
+              href={isHomePage ? "#home" : "/"} 
               sx={{ 
                 display: 'flex', 
                 alignItems: 'center', 
@@ -107,7 +108,7 @@ const Navbar = () => {
                   <Typography
                     key={link.name}
                     component="a"
-                    href={link.href}
+                    href={isHomePage ? link.href : `/${link.href}`}
                     sx={{
                       fontWeight: 600,
                       textDecoration: 'none',
@@ -120,7 +121,7 @@ const Navbar = () => {
                     {link.name}
                   </Typography>
                 ))}
-                <Button 
+                {/* <Button 
                   variant="contained" 
                   color="primary" 
                   sx={{ 
@@ -134,7 +135,7 @@ const Navbar = () => {
                   }}
                 >
                   Get Started
-                </Button>
+                </Button> */}
               </Box>
             )}
 
@@ -173,7 +174,7 @@ const Navbar = () => {
               button 
               key={link.name} 
               component="a" 
-              href={link.href}
+              href={isHomePage ? link.href : `/${link.href}`}
               onClick={toggleDrawer(false)}
               sx={{ py: 2 }}
             >

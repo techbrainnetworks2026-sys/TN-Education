@@ -30,7 +30,7 @@ const Careers = () => {
         position: 'relative' 
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth={false}>
         <Box sx={{ textAlign: 'center', mb: 8 }}>
           <Box 
             sx={{ 
@@ -69,7 +69,7 @@ const Careers = () => {
 
         <Grid container spacing={4}>
           {CAREERS.map((job, index) => (
-            <Grid size={{ xs: 12, md: 6, lg: 4 }} key={index}>
+            <Grid size={{ xs: 12, md: 6, lg: 3 }} key={index}>
               <Paper 
                 elevation={0}
                 sx={{ 
@@ -167,7 +167,7 @@ const Careers = () => {
                   </Box>
                 </Box>
 
-                <Button 
+                {/* <Button 
                   className="apply-btn"
                   variant="outlined" 
                   fullWidth
@@ -183,7 +183,7 @@ const Careers = () => {
                   }}
                 >
                   Apply Now
-                </Button>
+                </Button> */}
               </Paper>
             </Grid>
           ))}

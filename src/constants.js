@@ -75,7 +75,7 @@ export const PRODUCTS = [
     id: 10,
     title: 'Student Information Management (SIMS)',
     description: 'Streamlined data management for student records, attendance, and grades.',
-    image: 'https://images.unsplash.com/photo-1523240715632-d984bb4b9745?q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1758270705518-b61b40527e76?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D=80&w=800',
     category: 'Management'
   },
   {
@@ -178,7 +178,7 @@ export const INDUSTRIES = [
   'Education', 'Energy & Utilities', 'Entertainment and Media', 'Finance',
   'Food Technology', 'Healthcare', 'Infrastructure', 'Logistics',
   'Manufacturing', 'Ocean Technology', 'Oil and Gas', 'Pharmaceutical',
-  'Retail', 'Sports Technology', 'Telecommunication', 'Textile',
+  'Retail', 'Sports ', 'Technology', 'Telecommunication', 'Textile',
   'Transportation', 'Travel'
 ];
 

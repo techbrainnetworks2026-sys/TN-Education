@@ -22,7 +22,7 @@ const Services = () => {
         position: 'relative' 
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth={false}>
         <Box sx={{ textAlign: 'center', mb: 8 }}>
           <Box 
             sx={{ 

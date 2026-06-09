@@ -63,7 +63,7 @@ const Contact = () => {
         }} 
       />
 
-      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
+      <Container maxWidth={false} sx={{ position: 'relative', zIndex: 1 }}>
         <Box sx={{ textAlign: 'center', mb: 10 }}>
           <Box 
             sx={{ 

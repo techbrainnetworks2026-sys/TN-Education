@@ -58,8 +58,8 @@ const Hero = () => {
       />
 
       {/* Content */}
-      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 10, textAlign: 'center' }}>
-        <Box sx={{ maxWidth: 900, mx: 'auto' }}>
+      <Container maxWidth={false} sx={{ position: 'relative', zIndex: 10, textAlign: 'center' }}>
+        <Box>
           <Box
             sx={{
               display: 'inline-block',
