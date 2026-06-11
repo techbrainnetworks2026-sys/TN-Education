@@ -151,7 +151,7 @@ const Services = () => {
                   >
                     {service.description}
                   </Typography>
-                  <Box 
+                  {/* <Box 
                     className="arrow"
                     sx={{ 
                       display: 'flex', 
@@ -166,7 +166,7 @@ const Services = () => {
                     }}
                   >
                     Learn More <Typography component="span" sx={{ fontSize: '1.2rem' }}>→</Typography>
-                  </Box>
+                  </Box> */}
                 </Box>
               </Box>
             </Grid>
