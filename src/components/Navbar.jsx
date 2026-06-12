@@ -51,12 +51,13 @@ const Navbar = () => {
         sx={{
           backgroundColor: scrolled ? 'white' : 'transparent',
           transition: 'all 0.3s ease',
-          py: scrolled ? 1 : 2,
+          py: { xs: 0.5, sm: scrolled ? 1 : 2 },
           color: scrolled ? 'text.primary' : 'white',
+          px: { xs: 1, sm: 0 }
         }}
       >
-        <Container maxWidth={false}>
-          <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
+        <Container maxWidth={false} sx={{ px: { xs: 2, sm: 3, md: 4 } }}>
+          <Toolbar disableGutters sx={{ justifyContent: 'space-between', minHeight: { xs: 56, sm: 64 } }}>
             {/* Logo */}
             <Box 
               component="a" 
@@ -64,15 +65,15 @@ const Navbar = () => {
               sx={{ 
                 display: 'flex', 
                 alignItems: 'center', 
-                gap: 1.5, 
+                gap: { xs: 0.8, sm: 1.5 }, 
                 textDecoration: 'none', 
                 color: 'inherit' 
               }}
             >
               <Box 
                 sx={{ 
-                  width: 40, 
-                  height: 40, 
+                  width: { xs: 32, sm: 40 }, 
+                  height: { xs: 32, sm: 40 }, 
                   bgcolor: 'primary.main', 
                   borderRadius: 2, 
                   display: 'flex', 
@@ -80,24 +81,38 @@ const Navbar = () => {
                   justifyContent: 'center' 
                 }}
               >
-                <SchoolIcon sx={{ color: 'white', fontSize: 24 }} />
+                <SchoolIcon sx={{ color: 'white', fontSize: { xs: 18, sm: 24 } }} />
               </Box>
               <Typography 
                 variant="h6" 
                 sx={{ 
                   fontWeight: 700, 
                   letterSpacing: '-0.5px',
-                  display: { xs: 'none', sm: 'block' }
+                  display: 'block',
+                  fontSize: { xs: '0.75rem', sm: '1rem' },
+                  lineHeight: { xs: 1, sm: 1.2 }
                 }}
               >
-                Techbrain <Box component="span" sx={{ color: 'secondary.main' }}>Networks</Box><br /> <p style={{fontFamily: "var(--font-heading)",
-  marginTop:"-3px",
-  marginLeft:"4px",
-  fontSize: "0.9rem",
-  fontWeight: "500",
-  color: "var(--secondary)",
-  letterSpacing: "0.95em",
-  textTransform: "uppercase"  }}>Education</p>
+                <Box sx={{ display: { xs: 'block', sm: 'inline' } }}>
+                  Techbrain <Box component="span" sx={{ color: 'secondary.main' }}>Networks</Box>
+                </Box>
+                <Box 
+                  component="p" 
+                  sx={{
+                    fontFamily: "var(--font-heading)",
+                    marginTop: { xs: "2px", sm: "3px" },
+                    marginLeft: { xs: "2px", sm: "4px" },
+                    fontSize: { xs: "0.6rem", sm: "0.9rem" },
+                    fontWeight: "500",
+                    color: "var(--secondary)",
+                    letterSpacing: { xs: "0.75em", sm: "0.6em" },
+                    textTransform: "uppercase",
+                    margin: 0,
+                    padding: 0
+                  }}
+                >
+                  Education
+                </Box>
               </Typography>
             </Box>
 

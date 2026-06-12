@@ -58,19 +58,19 @@ const Hero = () => {
       />
 
       {/* Content */}
-      <Container maxWidth={false} sx={{ position: 'relative', zIndex: 10, textAlign: 'center' }}>
-        <Box>
+      <Container maxWidth={false} sx={{ position: 'relative', zIndex: 10, textAlign: 'center', px: { xs: 2, sm: 3 } }}>
+        <Box sx={{ mt: { xs: 8, sm: 0 } }}>
           <Box
             sx={{
               display: 'inline-block',
-              px: 3,
+              px: { xs: 2, sm: 3 },
               py: 0.5,
               bgcolor: 'rgba(255, 255, 255, 0.2)',
               backdropFilter: 'blur(8px)',
               borderRadius: 50,
               fontWeight: 600,
-              fontSize: '0.875rem',
-              mb: 4
+              fontSize: { xs: '0.75rem', sm: '0.875rem' },
+              mb: { xs: 2, sm: 4 }
             }}
           >
             Revolutionizing Modern Classrooms
@@ -79,9 +79,10 @@ const Hero = () => {
             variant={isMobile ? 'h3' : 'h1'}
             sx={{
               fontWeight: 800,
-              mb: 3,
+              mb: { xs: 2, sm: 3 },
               lineHeight: 1.1,
-              textShadow: '0 4px 12px rgba(0,0,0,0.3)'
+              textShadow: '0 4px 12px rgba(0,0,0,0.3)',
+              fontSize: { xs: '1.75rem', sm: '3.5rem', lg: '4rem' }
             }}
           >
             Smart Digital <Box component="span" sx={{ color: 'secondary.light' }}>Learning</Box> Solutions
@@ -89,30 +90,32 @@ const Hero = () => {
           <Typography
             variant="h5"
             sx={{
-              mb: 6,
+              mb: { xs: 4, sm: 6 },
               fontWeight: 400,
               opacity: 0.9,
-              maxWidth: 700,
+              maxWidth: { xs: '100%', sm: 700 },
               mx: 'auto',
-              lineHeight: 1.6
+              lineHeight: 1.6,
+              fontSize: { xs: '0.95rem', sm: '1.25rem' },
+              px: { xs: 1, sm: 0 }
             }}
           >
             Empowering Education Through Technology. Over 480 innovative products
             spanning 24 industries designed for the future of learning.
           </Typography>
 
-          <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'center', gap: 3 }}>
+          <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'center', gap: { xs: 2, sm: 3 }, px: { xs: 1, sm: 0 } }}>
             <Button
               variant="contained"
               color="primary"
               component="a"
               href="#products"
-              endIcon={<ChevronRightIcon sx={{ fontSize: 20 }} />}
+              endIcon={<ChevronRightIcon sx={{ fontSize: { xs: 18, sm: 20 } }} />}
               sx={{
                 borderRadius: 50,
-                px: 6,
-                py: 2,
-                fontSize: '1.1rem',
+                px: { xs: 4, sm: 6 },
+                py: { xs: 1.5, sm: 2 },
+                fontSize: { xs: '0.95rem', sm: '1.1rem' },
                 fontWeight: 700,
                 boxShadow: '0 10px 20px rgba(37, 99, 235, 0.4)',
                 '&:hover': {
@@ -130,9 +133,9 @@ const Hero = () => {
               href="#contact"
               sx={{
                 borderRadius: 50,
-                px: 6,
-                py: 2,
-                fontSize: '1.1rem',
+                px: { xs: 4, sm: 6 },
+                py: { xs: 1.5, sm: 2 },
+                fontSize: { xs: '0.95rem', sm: '1.1rem' },
                 fontWeight: 700,
                 color: 'white',
                 borderColor: 'rgba(255, 255, 255, 0.5)',
